@@ -1,0 +1,27 @@
+pre {
+	font-size: 14px;
+}
+
+h4 {
+	font-family: "Segoe UI Light_","Open Sans Light",Verdana,Arial,Helvetica,sans-serif !important;;
+	margin-top: 40px !important;;
+	margin-bottom: 20px !important;;
+}
+
+code {
+	color: #000 !important;;
+	line-height: 100% !important;;
+}
+
+.metro .calendar .calendar-header td a {
+	background: #333 !important;;
+}
+
+.metro .calendar .calendar-header td a:hover {
+	background-color: #D9D9D9 !important;;;
+	color: #333 !important;;
+}
+
+body {
+    font-family: "Segoe UI Light_","Open Sans Light",Verdana,Arial,Helvetica,sans-serif !important;;
+}
