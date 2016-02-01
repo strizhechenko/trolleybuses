@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <link href="/static/css/metro-bootstrap.css" rel="stylesheet">
     <link href="/static/css/reductor.css" rel="stylesheet">
@@ -11,9 +12,18 @@
     <title>Троллейбусы</title>
 </head>
 
-<body>
+<body class="metro">
     <content>
-        {{ content | safe }}
+        <div class="grid">
+            <div class="row">
+                {% for station, data in content.items() %}
+                <div class='span5'>
+                    {{ data.header | safe }}
+                    {{ data.buslist | safe }}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
     </content>
 </body>
 
