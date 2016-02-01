@@ -12,17 +12,14 @@
     <title>Троллейбусы</title>
 </head>
 
-<body class="metro">
+<body class="metro" style="background-color: #222;">
     <content>
-        <div class="grid">
-            <div class="row">
-                {% for station, data in content.items() %}
-                <div class='span5'>
-                    {{ data.header | safe }}
-                    {{ data.buslist | safe }}
-                </div>
-                {% endfor %}
+        <div class="tile-group">
+            {% for station, data in content.items() %}
+            <div class="tile triple double-vertical bg-olive">
+                {{ data.header | safe }} {{ data.buslist | safe }}
             </div>
+            {% endfor %}
         </div>
     </content>
 </body>
