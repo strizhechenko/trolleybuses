@@ -42,7 +42,7 @@ def main_content():
     for station, data in STATIONS.items():
         tree = etree.parse(urlopen(data['url']))
         output[station] = {
-            'header': "# %s" % (station,),
+            'header': "## %s" % (station,),
             'buslist': [],
         }
         root = tree.getroot()
@@ -52,7 +52,7 @@ def main_content():
                 continue
             bus_time = bus[1].text
             bus_distance = bus[2].text
-            bus_string = "- %s / %s / %s" % (bus_num, bus_time, bus_distance)
+            bus_string = "%s / %s / %s\n" % (bus_num, bus_time, bus_distance)
             output[station]['buslist'].append(bus_string)
 
         output[station]['header'] = MARKDOWN.convert(output[station]['header'])
