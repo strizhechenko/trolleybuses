@@ -38,7 +38,7 @@ STATIONS = OrderedDict((
         }
     ),
     (
-        u'от лична', {
+        u'от линча', {
             'url': 'http://m.ettu.ru/station/961924',
             'numbers': [9, 15],
         }
