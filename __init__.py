@@ -1,5 +1,5 @@
 # coding: utf8
-
+""" список троллейбусов на нужных мне остановках """
 import json
 import thread
 import time
@@ -36,6 +36,7 @@ STATIONS = {
 
 
 def fetch_station(station):
+    """ тредик, подтягивает данные, парсит и пихает в глобальный STATIONS """
     data = STATIONS.get(station)
     tree = etree.parse(urlopen(data['url']))
     output_s = {}
@@ -60,6 +61,7 @@ def fetch_station(station):
 
 @APP.route('/')
 def main():
+    """ главная и единственная страница """
     for station_name, station_data in STATIONS.items():
         if 'output' in station_data:
             del station_data['output']
@@ -77,5 +79,4 @@ def main():
     return render_template('index.html', stations=STATIONS)
 
 if __name__ == '__main__':
-    # APP.debug = True
     APP.run()
