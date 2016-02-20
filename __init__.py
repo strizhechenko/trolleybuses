@@ -5,34 +5,45 @@ import thread
 import time
 import xml.etree.ElementTree as etree
 from urllib2 import urlopen
+from collections import OrderedDict
 from markdown import Markdown
 from flask import Flask, render_template
 
 MARKDOWN = Markdown()
 APP = Flask(__name__)
 
-STATIONS = {
-    u'шварца-работа': {
-        'url': 'http://m.ettu.ru/station/962909',
-        'numbers': [6, 20],
-    },
-    u'дом-шварца': {
-        'url': 'http://m.ettu.ru/station/962512',
-        'numbers': [9],
-    },
-    u'гостиница уктус': {
-        'url': 'http://m.ettu.ru/station/962907',
-        'numbers': [6],
-    },
-    u'шварца-дом': {
-        'url': 'http://m.ettu.ru/station/961948',
-        'numbers': [9],
-    },
-    u'от лична': {
-        'url': 'http://m.ettu.ru/station/961924',
-        'numbers': [9, 15],
-    }
-}
+STATIONS = OrderedDict((
+    (
+        u'шварца-работа', {
+            'url': 'http://m.ettu.ru/station/962909',
+            'numbers': [6, 20],
+        }
+    ),
+    (
+        u'дом-шварца', {
+            'url': 'http://m.ettu.ru/station/962512',
+            'numbers': [9],
+        }
+    ),
+    (
+        u'гостиница уктус', {
+            'url': 'http://m.ettu.ru/station/962907',
+            'numbers': [6],
+        }
+    ),
+    (
+        u'шварца-дом', {
+            'url': 'http://m.ettu.ru/station/961948',
+            'numbers': [9],
+        }
+    ),
+    (
+        u'от лична', {
+            'url': 'http://m.ettu.ru/station/961924',
+            'numbers': [9, 15],
+        }
+    ),
+))
 
 
 def fetch_station(station):
@@ -67,7 +78,7 @@ def main():
             del station_data['output']
         thread.start_new_thread(fetch_station, (station_name,))
 
-    timeout = 2
+    timeout = 10
     cur_timeout = 0
 
     while not all(['output' in t.keys() for t in STATIONS.values()]):

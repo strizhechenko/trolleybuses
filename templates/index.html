@@ -17,8 +17,8 @@
         <div class="tile-group">
             {% for station, data in stations.items() %}
             <div class="tile double double-vertical bg-olive" style="padding: 10px;">
-                {{ data.get('output', {}).get(header) | safe }}
-                {{ data.get('output', {}).get(buslist) | safe }}
+                {{ data.output.header | safe }}
+                {{ data.output.buslist | safe }}
             </div>
             {% endfor %}
         </div>
