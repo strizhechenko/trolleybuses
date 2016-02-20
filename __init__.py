@@ -74,7 +74,7 @@ def fetch_station(station):
 def main():
     """ главная и единственная страница """
     for station_name, station_data in STATIONS.items():
-        if 'output' in station_data:
+        if station_data.get('output'):
             del station_data['output']
         thread.start_new_thread(fetch_station, (station_name,))
 
