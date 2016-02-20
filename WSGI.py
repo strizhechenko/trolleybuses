@@ -1,7 +1,7 @@
 import os
-from __init__ import app
+from __init__ import APP
 
-app.debug = False
+APP.debug = False
 
 if __name__ == "__main__":
-    app.run('0.0.0.0', port=os.environ.get('PORT', 5000))
+    APP.run('0.0.0.0', port=os.environ.get('PORT', 5000))
