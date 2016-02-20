@@ -15,9 +15,10 @@
 <body class="metro" style="background-color: #222;">
     <content>
         <div class="tile-group">
-            {% for station, data in content.items() %}
+            {% for station, data in stations.items() %}
             <div class="tile double double-vertical bg-olive" style="padding: 10px;">
-                {{ data.header | safe }} {{ data.buslist | safe }}
+                {{ data.get('output', {}).get(header) | safe }}
+                {{ data.get('output', {}).get(buslist) | safe }}
             </div>
             {% endfor %}
         </div>
