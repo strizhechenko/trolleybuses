@@ -16,7 +16,7 @@
     <content>
         <div class="tile-group">
             {% for station, data in stations.items() %}
-            <div class="tile triple double-vertical bg-olive" style="padding: 10px;">
+            <div class="tile triple double-vertical bg-darkIndigo" style="padding: 10px;">
                 {{ data.output.header | safe }}
                 {{ data.output.buslist | safe }}
             </div>
