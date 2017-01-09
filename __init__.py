@@ -14,35 +14,41 @@ APP = Flask(__name__)
 
 STATIONS = OrderedDict((
     (
-        u'шварца-работа', {
-            'url': 'http://m.ettu.ru/station/962909',
-            'numbers': [6, 20],
-        }
+        u'трансагентсво-работа', {
+            'url': 'http://m.ettu.ru/station/962305',
+            'numbers': [6, 7, 18, 20],
+        },
     ),
-    (
-        u'дом-шварца', {
-            'url': 'http://m.ettu.ru/station/962512',
-            'numbers': [9],
-        }
-    ),
-    (
-        u'гостиница уктус', {
-            'url': 'http://m.ettu.ru/station/962907',
-            'numbers': [6],
-        }
-    ),
-    (
-        u'шварца-дом', {
-            'url': 'http://m.ettu.ru/station/961948',
-            'numbers': [9],
-        }
-    ),
-    (
-        u'от линча', {
-            'url': 'http://m.ettu.ru/station/961924',
-            'numbers': [9, 15],
-        }
-    ),
+    # (
+    #     u'шварца-работа', {
+    #         'url': 'http://m.ettu.ru/station/962909',
+    #         'numbers': [6, 20],
+    #     }
+    # ),
+    # (
+    #     u'дом-шварца', {
+    #         'url': 'http://m.ettu.ru/station/962512',
+    #         'numbers': [9],
+    #     }
+    # ),
+    # (
+    #     u'гостиница уктус', {
+    #         'url': 'http://m.ettu.ru/station/962907',
+    #         'numbers': [6],
+    #     }
+    # ),
+    # (
+    #     u'шварца-дом', {
+    #         'url': 'http://m.ettu.ru/station/961948',
+    #         'numbers': [9],
+    #     }
+    # ),
+    # (
+    #     u'от линча', {
+    #         'url': 'http://m.ettu.ru/station/961924',
+    #         'numbers': [9, 15],
+    #     }
+    # ),
 ))
 
 
